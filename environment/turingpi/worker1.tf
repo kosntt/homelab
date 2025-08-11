@@ -8,7 +8,12 @@ data "talos_machine_configuration" "worker1" {
       {
         "hostname" = "turingpi-node2.lan"
       }
-    )
+    ),
+    templatefile("patches/tailscale.yaml.tftpl",
+      {
+        "authkey" = var.tailscale_authkey
+      }
+    ),
   ]
   talos_version = var.talos_version
 }

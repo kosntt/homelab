@@ -7,3 +7,9 @@ variable "cluster_name" {
   description = "The name of the talos kubernetes cluster"
   default     = "turingpi"
 }
+
+variable "tailscale_authkey" {
+  description = "The tailscale auth key to authorise nodes"
+  sensitive   = true
+  default     = ""
+}

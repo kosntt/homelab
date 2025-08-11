@@ -15,7 +15,12 @@ resource "talos_machine_configuration_apply" "controlplane" {
         "hostname" = "turingpi-node1.lan"
       }
     ),
-    file("patches/controlplane.yaml")
+    templatefile("patches/tailscale.yaml.tftpl",
+      {
+        "authkey" = var.tailscale_authkey
+      }
+    ),
+    file("patches/controlplane.yaml"),
   ]
 }
 
