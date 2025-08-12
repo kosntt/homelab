@@ -2,9 +2,9 @@
 machine:
   kubelet:
     extraMounts:
-      - destination: /var/lib/longhorn
+      - destination: /var/lib/rook
         type: bind
-        source: /var/lib/longhorn
+        source: /var/lib/rook
         # Options are fstab style mount options.
         options:
           - bind
@@ -21,7 +21,7 @@ machine:
   disks:
     - device: /dev/nvme0n1
       partitions:
-        - mountpoint: /var/lib/longhorn
+        - mountpoint: /var/lib/rook
   sysctls:
     vm.nr_hugepages: "1024"
   kernel:
