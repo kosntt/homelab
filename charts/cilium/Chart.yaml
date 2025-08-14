@@ -1,0 +1,10 @@
+apiVersion: v2
+name: cilium
+description: Proxy Helm chart for Cilium
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
+dependencies:
+  - name: cilium
+    version: "1.17.6"
+    repository: "https://helm.cilium.io/"
